@@ -1,19 +1,15 @@
 cask "darktable" do
-  arch arm: "arm64", intel: "x86_64"
+  arch arm: "arm64"
 
-  version "5.4.1"
-  sha256 arm:   "23ce74a4d7cbab30dc5e55043f97480b2a4eb1d96d602d529c9f9a428b99d041",
-         intel: "d615f7e78af9fb23d7c8017a5d35be50ea13f1ccf89491ef4b927e23eff0f43a"
+  version "5.6.2"
+  sha256 arm: "6ff88e58a2a59cb07b0a1502fea7205e68cd783380a33a3ce7bda68ec29def0c"
 
   on_arm do
     depends_on macos: ">= :sonoma"
   end
-  on_intel do
-    depends_on macos: ">= :sequoia"
-  end
 
   url "https://github.com/darktable-org/darktable/releases/download/release-#{version.major_minor_patch}/darktable-#{version}-#{arch}.dmg",
-      verified: "github.com/darktable-org/darktable/"
+    verified: "github.com/darktable-org/darktable/"
   name "darktable"
   desc "Photography workflow application and raw developer"
   homepage "https://www.darktable.org/"
@@ -35,6 +31,6 @@ cask "darktable" do
     "~/.cache/darktable",
     "~/.config/darktable",
     "~/.local/share/darktable",
-    "~/Library/Saved Application State/org.darktable.savedState",
+    "~/Library/Saved Application State/org.darktable.savedState"
   ]
 end
